@@ -80,7 +80,7 @@ export default function App() {
       console.log("Correct word:", correctWord);
 
       // Check if the input matches the correct word
-      if (value.toLowerCase() === correctWord.toLowerCase()) {
+      if (value.trim().toLowerCase() === correctWord.toLowerCase()) {
         setIsCorrect(true); // Correct
       } else {
         setIsCorrect(false); // Incorrect
@@ -172,7 +172,7 @@ export default function App() {
                   <input
                     type="text"
                     placeholder="Type the other pair here"
-                    className="border-b-2 float-left border-0 outline-0 md:w-fit w-[50%]"
+                    className="border-b-2 float-left border-0 outline-0 md:w-fit w-[80%] placeholder:text-xs"
                     value={input}
                     onChange={e => handleInputChange(e, index)}
                   />
