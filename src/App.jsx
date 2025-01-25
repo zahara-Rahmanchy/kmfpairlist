@@ -140,7 +140,7 @@ export default function App() {
   return (
     <>
       <div className=" slider-container flex flex-col justify-center items-center mt-10 w-full">
-        <h1 className="text-2xl my-10 font-semibold italic text-indigo-950">
+        <h1 className="text-2xl my-10 font-semibold italic text-indigo-950 text-center">
           KMF Pair List - Sentence Equivalence
         </h1>
         <div className="bg-stone-50 mb-4 border-b-2 border-b-gray-300 flex justify-between md:w-100 w-[85%] items-center px-3 py-3">
@@ -167,7 +167,7 @@ export default function App() {
                 id={index + 1}
                 setFlippedCard={setFlippedCard}
               />
-              <div className="flex justify-between items-center mx-2 my-2 px-2 py-1">
+              <div className="flex justify-between space-x-1.5 items-center mx-2 my-2 px-2 py-1">
                 <div>
                   <input
                     type="text"
