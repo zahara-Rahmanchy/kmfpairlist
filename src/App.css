@@ -1,0 +1,18 @@
+.slick-dots {
+  /* background-color: red;
+  grid-template-columns: repeat(10, 4fr); */
+  /* padding: 2px; */
+  bottom: -50px;
+  /* display: grid;
+  place-content: center;
+  grid-template-columns: repeat(10, 25px); 
+  grid-template-rows: repeat(3, auto);
+  gap: 16px; */
+}
+/* .slick-dots li {
+  /* width: 25px; 
+  margin: 3px;
+}
+.slick-dots .slick-active {
+  background-color: red; 
+} */
