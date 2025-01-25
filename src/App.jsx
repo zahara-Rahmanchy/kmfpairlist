@@ -140,6 +140,9 @@ export default function App() {
   return (
     <>
       <div className=" slider-container flex flex-col justify-center items-center mt-10 w-full">
+        <h1 className="text-2xl my-10 font-semibold italic text-indigo-950">
+          KMF Pair List - Sentence Equivalence
+        </h1>
         <div className="bg-stone-50 mb-4 border-b-2 border-b-gray-300 flex justify-between md:w-100 w-[85%] items-center px-3 py-3">
           {/* Dropdown for selecting section */}
           <select
