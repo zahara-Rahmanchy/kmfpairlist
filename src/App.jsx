@@ -6,6 +6,7 @@ import {useState} from "react";
 import {useEffect} from "react";
 import axios from "axios";
 import "./App.css";
+import {PairListTable} from "./components/PairListTable";
 
 // eslint-disable-next-line react/prop-types
 const CustomArrow = ({className, style, onClick}) => (
@@ -29,18 +30,21 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(false);
   const [meaning, setShowMeaning] = useState(false);
   const [sectionNumber, setSectionNumber] = useState(1);
+  const [isLoading, setISloading] = useState(false);
   const [words, setWords] = useState([]);
 
   const fetchData = async sectionNumber => {
+    setISloading(true);
     try {
       const response = await axios.get(
         `https://kmfpairlist-backend.vercel.app/get-pairlist?section=${sectionNumber}`
       );
       const data = response.data;
-      console.log("data: ", data);
+      // console.log("data: ", data);
       setCount(data.count);
       setWords(data.cursor); // Assuming cursor contains the list of words
-      console.log("Data fetched from server", data.data);
+      // console.log("Data fetched from server", data.data);
+      setISloading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -159,6 +163,11 @@ export default function App() {
           <p className="  text-black text-sm rounded">Words : {count}</p>
         </div>
         <Slider {...settings}>
+          {isLoading && (
+            <div className="flex flex-row mx-auto items-center justify-center h-full text-center">
+              <div className="w-[30px] h-[30px] mx-auto   text-center border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+            </div>
+          )}
           {words.map((item, index) => (
             <div key={index} className="bg-indigo-100 shadow-cyan-950 shadow">
               <FlipCard
@@ -208,6 +217,9 @@ export default function App() {
             </div>
           ))}
         </Slider>
+        <div className="my-10 w-full">
+          <PairListTable wordlist={words} sectionNumber={sectionNumber} />
+        </div>
       </div>
     </>
   );
