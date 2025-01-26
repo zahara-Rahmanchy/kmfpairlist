@@ -110,6 +110,12 @@ export default function App() {
         <ul className="slick-dots">{i}</ul>
       </div>
     ),
+    // Reset the input field when the slide changes
+    beforeChange: () => {
+      setInput(""); // Clear the input field
+      setIsCorrect(null); // Reset correctness state
+    },
+
     // customPaging: function (i) {
     //   return (
     //     <a className={`p-2 rounded ${"text-blue-600 bg-blue-100"}`}>{i + 1}</a>
@@ -129,7 +135,7 @@ export default function App() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true,
+          infinite: false,
           // dots: true,
         },
       },
@@ -154,7 +160,7 @@ export default function App() {
             onChange={handleSectionChange}
             className=" text-black border-0 outline-0 rounded"
           >
-            {Array.from({length: 38}, (_, index) => (
+            {Array.from({length: 41}, (_, index) => (
               <option key={index + 1} value={index + 1}>
                 Section {index + 1}
               </option>

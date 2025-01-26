@@ -28,7 +28,7 @@ export const PairListTable = ({wordlist, sectionNumber}) => {
               wordlist.map((row, index) => (
                 <tr
                   key={index}
-                  className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                  className={index % 2 === 0 ? "bg-cyan-50" : "bg-white"}
                 >
                   <td className="border border-gray-300 px-4 py-2">
                     {row.word1}
