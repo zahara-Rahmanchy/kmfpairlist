@@ -12,13 +12,13 @@ export const PairListTable = ({wordlist, sectionNumber}) => {
         <table className=" overflow-scroll table-auto w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-stone-100">
-              <th className="border border-blue-50 px-4 py-2 text-left">
+              <th className="border border-gray-300 px-4 py-2 text-left">
                 Word 1
               </th>
-              <th className="border border-gray-50 px-4 py-2 text-left">
+              <th className="border border-gray-300 px-4 py-2 text-left">
                 Word 2
               </th>
-              <th className="border border-gray-50 px-4 py-2 text-left">
+              <th className="border border-gray-300 px-4 py-2 text-left">
                 Meaning
               </th>
             </tr>
@@ -28,7 +28,7 @@ export const PairListTable = ({wordlist, sectionNumber}) => {
               wordlist.map((row, index) => (
                 <tr
                   key={index}
-                  className={index % 2 === 0 ? "bg-cyan-50" : "bg-white"}
+                  className={index % 2 === 0 ? "bg-white" : "bg-stone-100"}
                 >
                   <td className="border border-gray-300 px-4 py-2">
                     {row.word1}
