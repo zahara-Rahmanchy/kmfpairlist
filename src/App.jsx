@@ -191,6 +191,9 @@ export default function App() {
                     value={input}
                     onChange={e => handleInputChange(e, index)}
                   />
+                  <span className="cursor-pointer" onClick={() => setInput("")}>
+                    &#x1F504;
+                  </span>
                   {isCorrect === true && !isTyping && (
                     <p className="text-lime-500 font-extrabold text-sm mt-2 shadow-2xl">
                       &#10004;

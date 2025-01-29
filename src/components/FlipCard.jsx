@@ -41,6 +41,9 @@ const FlipCard = ({word1, word2, id, setFlippedCard}) => {
         <p className="absolute bottom-1 left-1 text-gray-400 text-xs  px-1 py-0.5 rounded">
           Tap on the card to reveal the pair
         </p>
+        <p className="absolute bottom-1 right-1 text-gray-400 text-xs  px-1 py-0.5 rounded">
+          {id + 1}
+        </p>
       </div>
     </div>
   );
